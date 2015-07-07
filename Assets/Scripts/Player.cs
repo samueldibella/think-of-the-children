@@ -4,7 +4,7 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	public int playerSpeed;
-	public GameObject manager;
+	GameObject manager;
 
 	int tileScale;
 

@@ -1,0 +1,22 @@
+-Set up move queue, maybe only a couple deep?
+	-sync lerp time to Moves() clockspeed time
+-basic turn no., health GUI, rad GUI (bfxr sounds?)
+-procedural level, with exit
+-child generator
+
+Quotes: 
+	"hence, the name proletarius, "the one who produces offspring". The only contribution of a proletarius to the Roman society was seen in his ability to raise children, the future Roman citizens who can colonize new territories conquered by the Roman Republic and later by the Roman Empire." - Wikipedia
+	
+	Stalker tarkovksy quote about having to move around to get to where you want to go
+	~45-7 minutes in: "I'll show the direction. Any deviation from it is dangerous."
+	
+	radiation Algorithm plot:
+		generate wind direction.
+		spawn a couple of radiation generating tiles, not near player.
+		
+		flat chance for wind to shift by degrees, or fall off, and pick up anywhere (4-5 turn time)
+		radiation disperses by wind.
+		
+	geiger counter plot:
+		bfxr noise repeats more often per second higher rad levels in square.
+		modulate slightly randomly depending on things?
