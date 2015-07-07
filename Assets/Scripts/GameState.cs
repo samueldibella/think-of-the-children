@@ -4,6 +4,7 @@ using System.Collections;
 public class GameState : MonoBehaviour {
 
 	public GameObject tilePrefab; 
+	public GameObject impassablePrefab;
 	public GameObject player;
 	public GameObject[,] tiles;
 	public Material exitLook;
@@ -11,12 +12,14 @@ public class GameState : MonoBehaviour {
 	GameObject currentLocation;
 	public int mapHeight; 
 	public int mapWidth; 
+	public int impassableFrequency;
 
 	Vector3 firstTile; 
 	public int tileScale; 
 	int firstX; 
 	int firstY; 
 	int playerStartY;
+	
 	int globalTurn;
 	int clockSpeed;
 	bool playerMoving;
@@ -50,6 +53,16 @@ public class GameState : MonoBehaviour {
 		tiles[Random.Range(0, mapHeight - 1), mapWidth - 1].GetComponent<TileStat>().isExit = true;
 		tiles[Random.Range(0, mapHeight - 1), mapWidth - 1].renderer.material = exitLook;
 		
+		for(int j = 0; j < mapHeight; j++) {
+			for(int i = 1; i < mapWidth; i++) {
+				if(Random.Range(0, 100) < impassableFrequency && tiles[j, i].GetComponent<TileStat>().isExit == false) {
+					tiles[j, i].GetComponent<TileStat>().spawnObstacle();
+					tiles[j, i].GetComponent<TileStat>().ObstacleHere = true;
+					
+				} 	
+			}
+		}
+		
 		playerStartY = (int) Random.Range(0, (mapHeight - 1));
 		currentLocation = tiles[tiles[0,0].GetComponent<TileStat>().y + playerStartY, tiles[0,0].GetComponent<TileStat>().x];
 		player = Instantiate(player, new Vector3(firstTile.x, firstTile.y + playerStartY, 0), Quaternion.identity) as GameObject;
@@ -76,22 +89,22 @@ public class GameState : MonoBehaviour {
 				
 				switch(currentDir) {
 				case 'n':
-					if(goalY < mapHeight - 1) {
+					if(goalY < mapHeight - 1 && tiles[goalY + 1, goalX].GetComponent<TileStat>().ObstacleHere == false) {
 						goalTile = tiles[goalY + 1, goalX];
 					}
 					break;
 				case 'w':
-					if(goalX > 0) {
+					if(goalX > 0 && tiles[goalY, goalX - 1].GetComponent<TileStat>().ObstacleHere == false) {
 						goalTile = tiles[goalY, goalX - 1];
 					} 
 					break;
 				case 'e':
-					if(goalX < mapWidth - 1) {
+					if(goalX < mapWidth - 1 && tiles[goalY, goalX + 1].GetComponent<TileStat>().ObstacleHere == false) {
 						goalTile = tiles[goalY, goalX + 1];
 					} 
 					break;
 				case 's':
-					if(goalY > 0) {
+					if(goalY > 0 && tiles[goalY - 1, goalX].GetComponent<TileStat>().ObstacleHere == false) {
 						goalTile = tiles[goalY - 1, goalX];
 					}
 					break;
@@ -108,6 +121,7 @@ public class GameState : MonoBehaviour {
 				currentLocation = goalTile;
 				playerMoving = false;
 			
+				globalTurn++;
 			}
 			
 			yield return 0;
