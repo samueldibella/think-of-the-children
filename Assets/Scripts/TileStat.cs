@@ -16,7 +16,7 @@ public class TileStat : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerHere = false;
-		radLevel = 1;
+		radLevel = Random.Range(0, 10);
 	}
 	
 	// Update is called once per frame

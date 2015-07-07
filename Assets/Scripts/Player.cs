@@ -25,5 +25,9 @@ public class Player : MonoBehaviour {
 		} else if (Input.GetKeyDown(KeyCode.D)) {
 			manager.SendMessage("playerMove", 'e');
 		}
+		
+		if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)) {
+			this.audio.Play();
+		}
 	}
 }
