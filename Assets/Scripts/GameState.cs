@@ -26,7 +26,7 @@ public class GameState : MonoBehaviour {
 	
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		globalTurn = 0;
 		mapHeight = 10;
 		mapWidth = 20;

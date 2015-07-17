@@ -25,6 +25,9 @@ public class TileStat : MonoBehaviour {
 	}
 	
 	public void spawnObstacle() {
+		int orientationAngle = 90;
+	
 		myObstacle = Instantiate(obstaclePrefab, this.transform.position, Quaternion.identity) as GameObject;
+		myObstacle.transform.Rotate(0, 0, Random.Range(0, 4) * orientationAngle);
 	}
 }

@@ -1,7 +1,7 @@
--Set up move queue, maybe only a couple deep?
+Moves
 	-sync lerp time to Moves() clockspeed time
 -basic turn no., health GUI, rad GUI (bfxr sounds?)
--procedural level, with exit
+-procedural level, with exit .5 done
 -child generator
 
 Quotes: 
