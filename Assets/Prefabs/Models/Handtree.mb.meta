@@ -22,6 +22,23 @@ ModelImporter:
     100032: pasted__pCylinder1 7
     100034: pCone1
     100036: pCylinder1
+    100038: group10
+    100040: group11
+    100042: group12
+    100044: group8
+    100046: group9
+    100048: pasted__group10
+    100050: pasted__group2
+    100052: pasted__group2 1
+    100054: pasted__group2 2
+    100056: pasted__group9
+    100058: pasted__pasted__group2
+    100060: pasted__pasted__group2 1
+    100062: pasted__pasted__pasted__pCylinder1
+    100064: pasted__pasted__pasted__pCylinder1 1
+    100066: pasted__pasted__pCylinder1
+    100068: pasted__pasted__pCylinder1 1
+    100070: pasted__pasted__pCylinder1 2
     400000: group
     400002: group1
     400004: group2
@@ -41,6 +58,23 @@ ModelImporter:
     400032: pasted__pCylinder1 7
     400034: pCone1
     400036: pCylinder1
+    400038: group10
+    400040: group11
+    400042: group12
+    400044: group8
+    400046: group9
+    400048: pasted__group10
+    400050: pasted__group2
+    400052: pasted__group2 1
+    400054: pasted__group2 2
+    400056: pasted__group9
+    400058: pasted__pasted__group2
+    400060: pasted__pasted__group2 1
+    400062: pasted__pasted__pasted__pCylinder1
+    400064: pasted__pasted__pasted__pCylinder1 1
+    400066: pasted__pasted__pCylinder1
+    400068: pasted__pasted__pCylinder1 1
+    400070: pasted__pasted__pCylinder1 2
     2300000: pasted__pCylinder1
     2300002: pasted__pCylinder1 1
     2300004: pasted__pCylinder1 2
@@ -51,6 +85,11 @@ ModelImporter:
     2300014: pasted__pCylinder1 7
     2300016: pCone1
     2300018: pCylinder1
+    2300020: pasted__pasted__pasted__pCylinder1
+    2300022: pasted__pasted__pasted__pCylinder1 1
+    2300024: pasted__pasted__pCylinder1
+    2300026: pasted__pasted__pCylinder1 1
+    2300028: pasted__pasted__pCylinder1 2
     3300000: pasted__pCylinder1
     3300002: pasted__pCylinder1 1
     3300004: pasted__pCylinder1 2
@@ -61,6 +100,11 @@ ModelImporter:
     3300014: pasted__pCylinder1 7
     3300016: pCone1
     3300018: pCylinder1
+    3300020: pasted__pasted__pasted__pCylinder1
+    3300022: pasted__pasted__pasted__pCylinder1 1
+    3300024: pasted__pasted__pCylinder1
+    3300026: pasted__pasted__pCylinder1 1
+    3300028: pasted__pasted__pCylinder1 2
     4300000: pCylinder1
     4300002: pCone1
     4300004: pasted__pCylinder1
@@ -71,6 +115,11 @@ ModelImporter:
     4300014: pasted__pCylinder1
     4300016: pasted__pCylinder1
     4300018: pasted__pCylinder1
+    4300020: pasted__pasted__pCylinder1
+    4300022: pasted__pasted__pCylinder1
+    4300024: pasted__pasted__pCylinder1
+    4300026: pasted__pasted__pasted__pCylinder1
+    4300028: pasted__pasted__pasted__pCylinder1
     9500000: //RootNode
   materials:
     importMaterials: 1

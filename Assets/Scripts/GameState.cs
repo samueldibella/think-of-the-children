@@ -28,8 +28,8 @@ public class GameState : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		globalTurn = 0;
-		mapHeight = 10;
-		mapWidth = 20;
+		mapHeight = 100;
+		mapWidth = 100;
 		
 		firstX = 0 - mapWidth/2;
 		firstY = 0 - mapHeight/2;

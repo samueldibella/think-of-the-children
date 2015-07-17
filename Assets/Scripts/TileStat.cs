@@ -25,9 +25,15 @@ public class TileStat : MonoBehaviour {
 	}
 	
 	public void spawnObstacle() {
-		int orientationAngle = 90;
+		int orientationAngle = Random.Range(0, 4) * 90;
+		float[] scaleDeviation = new float[3];
+		
+		for(int i = 0; i < 3; i++) {
+			scaleDeviation[i] = Random.Range(-2, 2) * .1f;
+		} 
 	
 		myObstacle = Instantiate(obstaclePrefab, this.transform.position, Quaternion.identity) as GameObject;
-		myObstacle.transform.Rotate(0, 0, Random.Range(0, 4) * orientationAngle);
+		myObstacle.transform.Rotate(0, 0,  orientationAngle);
+		myObstacle.transform.localScale += new Vector3(scaleDeviation[0], scaleDeviation[1], scaleDeviation[2]);
 	}
 }
