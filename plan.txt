@@ -20,3 +20,4 @@ Quotes:
 	geiger counter plot:
 		bfxr noise repeats more often per second higher rad levels in square.
 		modulate slightly randomly depending on things?
+		

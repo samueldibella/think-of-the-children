@@ -5,6 +5,7 @@ public class GameState : MonoBehaviour {
 
 	public GameObject tilePrefab; 
 	public GameObject impassablePrefab;
+	public GameObject whiteTreePrefab;
 	public GameObject player;
 	public GameObject[,] tiles;
 	public Material exitLook;
@@ -13,6 +14,7 @@ public class GameState : MonoBehaviour {
 	public int mapHeight; 
 	public int mapWidth; 
 	public int impassableFrequency;
+	public int whiteTreeFrequency;
 
 	Vector3 firstTile; 
 	public int tileScale; 
@@ -37,6 +39,9 @@ public class GameState : MonoBehaviour {
 		firstTile = new Vector3(firstX, firstY, 0);
 		clockSpeed = 20;
 		playerMoving = false;
+		
+		impassableFrequency = 30;
+		whiteTreeFrequency = 1;
 	
 		tiles = new GameObject[mapHeight, mapWidth];
 	
@@ -56,9 +61,13 @@ public class GameState : MonoBehaviour {
 		for(int j = 0; j < mapHeight; j++) {
 			for(int i = 1; i < mapWidth; i++) {
 				if(Random.Range(0, 100) < impassableFrequency && tiles[j, i].GetComponent<TileStat>().isExit == false) {
-					tiles[j, i].GetComponent<TileStat>().spawnObstacle();
-					tiles[j, i].GetComponent<TileStat>().ObstacleHere = true;
-					
+					if(Random.Range(0, 100) < whiteTreeFrequency) {
+						tiles[j, i].GetComponent<TileStat>().spawnObstacle('w');
+						tiles[j, i].GetComponent<TileStat>().ObstacleHere = true;
+					} else {
+						tiles[j, i].GetComponent<TileStat>().spawnObstacle('n');
+						tiles[j, i].GetComponent<TileStat>().ObstacleHere = true;
+					}
 				} 	
 			}
 		}

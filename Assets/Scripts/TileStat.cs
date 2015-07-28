@@ -11,6 +11,7 @@ public class TileStat : MonoBehaviour {
 	public int radLevel;
 	
 	public GameObject obstaclePrefab;
+	public GameObject whiteTreePrefab;
 	GameObject myObstacle;
 	
 	// Use this for initialization
@@ -24,15 +25,25 @@ public class TileStat : MonoBehaviour {
 	
 	}
 	
-	public void spawnObstacle() {
+	public void spawnObstacle(char type) {
 		int orientationAngle = Random.Range(0, 4) * 90;
 		float[] scaleDeviation = new float[3];
 		
 		for(int i = 0; i < 3; i++) {
 			scaleDeviation[i] = Random.Range(-2, 2) * .1f;
 		} 
-	
-		myObstacle = Instantiate(obstaclePrefab, this.transform.position, Quaternion.identity) as GameObject;
+
+		switch(type) {
+			case 'w':
+			myObstacle = Instantiate(whiteTreePrefab, this.transform.position, Quaternion.identity) as GameObject;
+				break;
+			case 'n':
+			myObstacle = Instantiate(obstaclePrefab, this.transform.position, Quaternion.identity) as GameObject;
+				break;
+			default:
+				break;
+		}	
+		
 		myObstacle.transform.Rotate(0, 0,  orientationAngle);
 		myObstacle.transform.localScale += new Vector3(scaleDeviation[0], scaleDeviation[1], scaleDeviation[2]);
 	}
